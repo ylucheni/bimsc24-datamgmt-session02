@@ -1,47 +1,79 @@
+<!-- // Script is in some way equivalent to script.js. This is place
+to define variables, methods and imports of other Vue compoennts. -->
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+// Understanding ref article: https://blog.logrocket.com/understanding-vue-refs/#:~:text=Ref%20s%20are%20Vue.,element%20in%20your%20Vue%20instance.
+// When ref attribute is added to element, this element then can be referenced
+// in template. It is sort of templatecement of getElementById (but better)
+import { ref } from "vue";
+
+// Define variables and constants
+var count = ref(0);
+
+// Define functions
+function increment() {
+  count.value++;
+  //console.log(`Value is: ${count.value}.`);
+}
 </script>
 
+<!-- Template is a HTML-based syntax that allows you to bind the rendered DOM elements
+with data, objects, functions etc. -->
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div id="top-bar">
+    <div id="title-container">
+      <img class="logo-image" alt="Iaac logo" src="./assets/iaac-white.png" />
+      <h2>Digital Tools for Cloud-based Data Management</h2>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="content">
+    <!-- First example - button -->
+    <button @click="increment">Add one more</button>
+    <p>Count is: {{  count }}</p>
+
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<!-- Style is for CSS styling -->
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #2c3e50;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+#top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+#title-container {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-right: 1.5rem;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+#content {
+  display: flex;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.logo-image {
+  height: 3.25rem;
+  padding: 0.5rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 </style>
+
