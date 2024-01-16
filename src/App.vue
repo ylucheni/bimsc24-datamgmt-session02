@@ -28,7 +28,10 @@ with data, objects, functions etc. -->
 
   <div id="content">
     <!-- First example - button -->
+    <!-- Here we define what function will be called when button is clicked. -->
     <button @click="increment">Add one more</button>
+
+    <!-- Now we print the value. The syntax to print variable is {{ variable_name }}. -->
     <p>Count is: {{  count }}</p>
 
   </div>
