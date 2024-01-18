@@ -12,7 +12,6 @@ var count = ref(0);
 // Define functions
 function increment() {
   count.value++;
-  //console.log(`Value is: ${count.value}.`);
 }
 </script>
 
@@ -32,7 +31,7 @@ with data, objects, functions etc. -->
     <button @click="increment">Add one more</button>
 
     <!-- Now we print the value. The syntax to print variable is {{ variable_name }}. -->
-    <p>Count is: {{  count }}</p>
+    <p style="margin-left: 8px">Count is: {{ count }}</p>
 
   </div>
 </template>
@@ -63,6 +62,7 @@ with data, objects, functions etc. -->
 
 #content {
   display: flex;
+  padding: 20px
 }
 
 .logo-image {
