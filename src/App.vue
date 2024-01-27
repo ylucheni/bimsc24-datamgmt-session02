@@ -2,6 +2,11 @@
 <script setup>
 import { ref } from "vue" // you need this to use ref()
 let name = ref( "Yichen Lu" )
+let count = ref("0")
+
+function increment() {
+    count.value++;
+}
 
 </script>
 
@@ -19,6 +24,8 @@ let name = ref( "Yichen Lu" )
 
         <div id="sidebar" class="container"> Sidebar </div>
 
+        <button @click="increment">Add one more</button>
+
         <div id="main" class="container"> Text input </div>
 
 </div>
@@ -33,7 +40,7 @@ let name = ref( "Yichen Lu" )
 
 div{
     
-    background-color: rgb(59, 59, 59); 
+    background-color: rgb(0, 0, 0); 
     color: white;
 }
 
@@ -57,7 +64,7 @@ img{
 
 #navbar{
 
-    height: 50px;
+    height: 70px;
     border-color: red;
 
 
@@ -66,7 +73,7 @@ img{
 #flex{
     
     display: flex;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 70px);
 }
 
 #sidebar{
