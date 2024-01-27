@@ -23,11 +23,13 @@ function increment() {
 <div id="flex">
 
         <div id="sidebar" class="container"> Sidebar </div>
-
+        <div id="sidebar">
         <button @click="increment">Add one more</button>
+        </div>
 
         <div id="main" class="container"> Text input </div>
-
+        
+        <p id="main"> Count is: {{ count }}</p>
 </div>
 
 
@@ -78,13 +80,13 @@ img{
 
 #sidebar{
     
-    width:30%;
+    width:20%;
     border-color: blue;
 
 }
 
 #main{
-    width:70%;
+    width:80%;
     border-color: green;
 
 }
