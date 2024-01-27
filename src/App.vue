@@ -1,7 +1,7 @@
 <!-- the script is where the js code goes -->
 <script setup>
 import { ref } from "vue" // you need this to use ref()
-
+let name = ref( "Yichen Lu" )
 
 </script>
 
@@ -11,7 +11,8 @@ import { ref } from "vue" // you need this to use ref()
 <template>
 
 <div id="navbar" class="container">  
-        <div id="title">Yichen's bootcamp website</div>
+        <div id="title">DATAMGMT - Assignment02</div>
+        <div id="title">{{name}}</div>
 </div>
 
 <div id="flex">
