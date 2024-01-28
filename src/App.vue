@@ -9,6 +9,15 @@ count.value++;
 }
 
 
+const inputText = ref('');
+const displayText = ref('');
+
+const addText = () => {
+displayText.value = inputText.value;
+}
+
+
+
 </script>
 
 
@@ -23,14 +32,18 @@ count.value++;
 
 <div id="flex">
 
-<div id="sidebar" class="container"> <button @click="increment">Add one more</button></div>
+<div id="sidebar" class="container"> <P> column 1_conout number </P><button @click="increment">Add one more</button> Count is: {{ count }} </div>
 
-<div id="sidebar" class="container"> <input type="text" v-model="inputText" />
-    <button @click="addText">Add Text</button> </div>
+<div id="sidebar" class="container"> 
+    <P> column 2_adding text </P>
+    <button @click="addText">Add Text</button> 
+    <input type="text" v-model="inputText" />
+    <p>{{ displayText }}</p>
+</div>
 
-    <div id="sidebar" class="container">{{ displayText }}</div>
-      
-<div id="main" class="container"> Count is: {{ count }}</div>
+<div id="main" class="container"> <p>mian</p> </div>
+
+
 
 </div>
 
@@ -75,7 +88,7 @@ div{
 
 #sidebar{
     
-    width:20%;
+    width:18%;
     border-color: blue;
 
 }
