@@ -2,11 +2,12 @@
 <script setup>
 import { ref } from "vue" // you need this to use ref()
 let name = ref( "Yichen Lu" )
-let count = ref("0")
+let count = ref(0)
 
 function increment() {
-    count.value++;
+count.value++;
 }
+
 
 </script>
 
@@ -22,14 +23,10 @@ function increment() {
 
 <div id="flex">
 
-        <div id="sidebar" class="container"> Sidebar </div>
-        <div id="sidebar">
-        <button @click="increment">Add one more</button>
-        </div>
+<div id="sidebar" class="container"> <button @click="increment">Add one more</button></div>
+      
+<div id="main" class="container"> Count is: {{ count }}</div>
 
-        <div id="main" class="container"> Text input </div>
-        
-        <p id="main"> Count is: {{ count }}</p>
 </div>
 
 
@@ -57,13 +54,6 @@ div{
     box-sizing: border-box;
 }
 
-img{
-
-    height: 100%;
-    width: auto;
-
-}
-
 #navbar{
 
     height: 70px;
@@ -88,6 +78,7 @@ img{
 #main{
     width:80%;
     border-color: green;
+    
 
 }
 
@@ -96,13 +87,8 @@ img{
     float:left;
 }
 
-#logo{
-    width: 30%;
-    height: 100%;
-    float:right;
-    text-align: right;
 
-}
+
 
 .container{
 
@@ -111,5 +97,8 @@ img{
 
 }
 
+button{
+    margin-left: 10px;
+}
 
 </style>
