@@ -24,6 +24,11 @@ count.value++;
 <div id="flex">
 
 <div id="sidebar" class="container"> <button @click="increment">Add one more</button></div>
+
+<div id="sidebar" class="container"> <input type="text" v-model="inputText" />
+    <button @click="addText">Add Text</button> </div>
+
+    <div id="sidebar" class="container">{{ displayText }}</div>
       
 <div id="main" class="container"> Count is: {{ count }}</div>
 
